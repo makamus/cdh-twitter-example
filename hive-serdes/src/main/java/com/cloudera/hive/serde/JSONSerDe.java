@@ -120,6 +120,7 @@ public class JSONSerDe implements SerDe {
     row.clear();
     try {
       ObjectMapper mapper = new ObjectMapper();
+      mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);      //sometime json equoto {'name'=15}
       // This is really a Map<String, Object>. For more information about how
       // Jackson parses JSON in this example, see
       // http://wiki.fasterxml.com/JacksonDataBinding
